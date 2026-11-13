@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate strong and secure passwords with a customizable password generator.">
+    <title>SecurePass | Smart Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">S</span>
+            <span>SecurePass</span>
+        </a>
+
+        <span class="header-label">PASSWORD GENERATOR</span>
+    </header>
+
+    <main class="main-container">
+
+        <section class="intro">
+            <span class="eyebrow">YOUR DIGITAL SECURITY TOOL</span>
+            <h1>Create stronger passwords.</h1>
+            <p>
+                Generate secure, unique passwords in seconds.
+                Customize your settings and protect your digital accounts.
+            </p>
+        </section>
+
+        <section class="generator-card">
+
+            <div class="card-heading">
+                <div>
+                    <h2>Password Generator</h2>
+                    <p>Customize your password below.</p>
+                </div>
+
+                <div class="security-icon" aria-hidden="true">◆</div>
+            </div>
+
+            <div class="password-area">
+                <label for="passwordOutput">Generated password</label>
+
+                <div class="password-display">
+                    <input
+                        type="text"
+                        id="passwordOutput"
+                        placeholder="Your password will appear here"
+                        readonly
+                        aria-label="Generated password"
+                    >
+
+                    <button
+                        type="button"
+                        id="copyButton"
+                        class="copy-button"
+                        aria-label="Copy password"
+                    >
+                        Copy
+                    </button>
+                </div>
+
+                <p id="copyMessage" class="copy-message" aria-live="polite"></p>
+            </div>
+
+            <div class="strength-area">
+                <div class="strength-heading">
+                    <span>Password strength</span>
+                    <strong id="strengthText">Not generated</strong>
+                </div>
+
+                <div class="strength-track">
+                    <div id="strengthBar" class="strength-fill"></div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+
+                <div class="settings-heading">
+                    <h3>Password settings</h3>
+                    <span>Customize your password</span>
+                </div>
+
+                <div class="length-setting">
+                    <div class="length-heading">
+                        <label for="lengthSlider">Password length</label>
+                        <strong id="lengthValue">16</strong>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="lengthSlider"
+                        min="8"
+                        max="64"
+                        value="16"
+                    >
+
+                    <div class="range-labels">
+                        <span>8 characters</span>
+                        <span>64 characters</span>
+                    </div>
+                </div>
+
+                <div class="options-grid">
+
+                    <label class="option-card">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="custom-checkbox"></span>
+                        <span class="option-text">
+                            <strong>Uppercase</strong>
+                            <small>A–Z</small>
+                        </span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="custom-checkbox"></span>
+                        <span class="option-text">
+                            <strong>Lowercase</strong>
+                            <small>a–z</small>
+                        </span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="custom-checkbox"></span>
+                        <span class="option-text">
+                            <strong>Numbers</strong>
+                            <small>0–9</small>
+                        </span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="checkbox" id="symbols" checked>
+                        <span class="custom-checkbox"></span>
+                        <span class="option-text">
+                            <strong>Symbols</strong>
+                            <small>! @ # $ %</small>
+                        </span>
+                    </label>
+
+                </div>
+
+                <p id="errorMessage" class="error-message" role="alert"></p>
+
+                <button type="button" id="generateButton" class="generate-button">
+                    <span>Generate Password</span>
+                    <span aria-hidden="true">↗</span>
+                </button>
+
+            </div>
+
+            <div class="card-footer">
+                <span>◆</span>
+                Your password is generated locally in your browser.
+            </div>
+
+        </section>
+
+        <section class="info-section">
+            <h2>Better passwords. Better protection.</h2>
+            <p>
+                Use a combination of character types and longer passwords
+                to improve your account security.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>SecurePass &copy; 2026. Built for better digital security.</p>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">
+        Password copied successfully!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
